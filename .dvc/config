@@ -1,0 +1,5 @@
+[core]
+    remote = dvc-remote
+['remote "dvc-remote"']
+    url = s3://mlops-remote-storage/dvc_remote
+    version_aware = false
