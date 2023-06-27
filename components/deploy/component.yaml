@@ -1,0 +1,15 @@
+name: Deploy model
+description: deploy model using seldon core
+
+inputs:
+  - { name: model_uri, type: String, description: 'MLFlow model artifact URI' }
+
+implementation:
+  container:
+    image: "kalpa/washing-machine-deploy-model:1.0.0"
+    command: [
+      python3,
+      src/deploy.py,
+      --model_uri,
+      { inputValue: model_uri }
+    ]
